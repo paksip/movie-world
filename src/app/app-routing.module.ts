@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {RouterModule, Routes} from "@angular/router";
+import {MovieComponent} from "./movie/movie.component";
+import {HomeComponent} from "./home/home.component";
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'movie',
+    loadChildren: 'app/movie/movie.module#MovieModule'
+  },
+  {
+    path: 'performer',
+    loadChildren: 'app/performer/performer.module#PerformerModule'
+  },
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
