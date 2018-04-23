@@ -4,12 +4,14 @@ import { ListPerformersComponent } from './list-performers/list-performers.compo
 import { DetailsPerformerComponent } from './details-performer/details-performer.component';
 import { PerformerComponent } from './performer.component';
 import { PerformerRoutingModule } from './/performer-routing.module';
+import { PerformerService } from './performer.service';
 
 @NgModule({
   imports: [
     CommonModule,
     PerformerRoutingModule
   ],
-  declarations: [ListPerformersComponent, DetailsPerformerComponent, PerformerComponent]
+  declarations: [ListPerformersComponent, DetailsPerformerComponent, PerformerComponent],
+  providers: [PerformerService]
 })
 export class PerformerModule { }
