@@ -8,6 +8,8 @@ import { MovieModule } from './movie/movie.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { PerformerModule } from './performer/performer.module';
 import {HomeModule} from "./home/home.module";
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import {HomeModule} from "./home/home.module";
     MovieModule,
     NavigationModule,
     PerformerModule,
-    HomeModule
+    HomeModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
