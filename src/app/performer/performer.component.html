@@ -1,3 +1,8 @@
-<p>
-  performer works!
-</p>
+<div class="row">
+  <div class="col-6">
+    <app-list-performers (performer)="performerChanged($event)"></app-list-performers>
+  </div>
+  <div class="col-6">
+    <app-details-performer [performer]="performer"></app-details-performer>
+  </div>
+</div>

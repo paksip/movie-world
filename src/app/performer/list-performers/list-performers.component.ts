@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {PerformerService} from "../performer.service";
 
 @Component({
   selector: 'app-list-performers',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPerformersComponent implements OnInit {
 
-  constructor() { }
+  @Output('performer') performer = new EventEmitter<any>();
+  performerId: any;
+
+  constructor(private performerService: PerformerService) { }
 
   ngOnInit() {
+  }
+
+  getById(){
+    this.performerService.getById(this.performerId).subscribe(result => {
+      this.performer.emit(result);
+    });
   }
 
 }
