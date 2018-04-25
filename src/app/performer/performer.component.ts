@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerformerComponent implements OnInit {
 
+  performer: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  performerChanged(performer: any){
+    this.performer = performer;
   }
 
 }

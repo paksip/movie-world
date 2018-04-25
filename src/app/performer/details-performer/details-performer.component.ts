@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-details-performer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details-performer.component.css']
 })
 export class DetailsPerformerComponent implements OnInit {
+
+  @Input('performer') performer: any;
 
   constructor() { }
 

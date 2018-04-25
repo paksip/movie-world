@@ -8,9 +8,11 @@ import { MovieModule } from './movie/movie.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { PerformerModule } from './performer/performer.module';
 import {HomeModule} from "./home/home.module";
-import { CoreModule } from './core/core.module';
+import {CoreModule, HttpLoaderFactory} from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import {AuthenticationModule} from "./authentication/authentication.module";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {HttpClient} from "@angular/common/http";
 
 
 @NgModule({
@@ -26,6 +28,13 @@ import {AuthenticationModule} from "./authentication/authentication.module";
     HomeModule,
     CoreModule,
     SharedModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     AuthenticationModule
   ],
   providers: [],
