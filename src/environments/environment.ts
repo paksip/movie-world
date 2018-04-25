@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  basic_url: 'https://api.trakt.tv'
+  basic_url: 'https://api.themoviedb.org',
+  key_API : '7a5eb95744a1f1b70638ef3d93885bbb'
 };

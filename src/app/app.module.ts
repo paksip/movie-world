@@ -10,6 +10,7 @@ import { PerformerModule } from './performer/performer.module';
 import {HomeModule} from "./home/home.module";
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import {AuthenticationModule} from "./authentication/authentication.module";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     PerformerModule,
     HomeModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    AuthenticationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
