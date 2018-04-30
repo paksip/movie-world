@@ -23,13 +23,13 @@ export class ListPerformersComponent implements OnInit {
 
   getByText() {
     this.performerService.getByText(this.search).subscribe((outcome) => {
-      this.performer.emit(undefined);
+      this.router.navigate(['/performer'], { queryParams: {} });
       this.performers = outcome.results;
     });
   }
 
   details(performer: any) {
     this.performers = [];
-    this.performer.emit(performer);
+    this.router.navigate(['/performer'], { queryParams: { performerId: performer.id} });
   }
 }
