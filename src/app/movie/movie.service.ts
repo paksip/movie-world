@@ -21,4 +21,8 @@ export class MovieService {
   getCredits(id: number): Observable<any> {
     return this.http.get<any>(`${environment.basic_url}/movie/${id}/credits?api_key=${environment.key_API}`)
   }
+
+  getGenres(): Observable<any>{
+    return this.http.get<any>(`${environment.basic_url}/genre/movie/list?api_key=${environment.key_API}`)
+  }
 }

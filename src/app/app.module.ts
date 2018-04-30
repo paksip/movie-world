@@ -14,6 +14,7 @@ import {AuthenticationModule} from "./authentication/authentication.module";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import { SeriesModule } from './series/series.module';
+import {RecommendationModule} from "./recommendation/recommendation.module";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SeriesModule } from './series/series.module';
     MovieModule,
     NavigationModule,
     PerformerModule,
+    RecommendationModule,
     HomeModule,
     CoreModule,
     SharedModule,
