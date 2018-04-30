@@ -10,7 +10,6 @@ import {ActivatedRoute} from "@angular/router";
 export class DetailsMovieComponent implements OnInit {
 
   @Input("movie") movie: any;
-  movieId: number;
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) { }
 

@@ -1,1 +1,17 @@
-{{ movie?.title }}
+<div class="container-fluid py-3" *ngIf="movie">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3>{{movie.title}}</h3>
+      <div class="text-center">
+        <img src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}">
+      </div>
+      <div>
+        <p><b>Overview:</b> {{movie.overview}}</p>
+        <p><b>Release:</b> {{movie.release_date}}</p>
+        <p><b>Language:</b> {{movie.original_language}}</p>
+        <p><b>Popularity:</b> {{movie.popularity}}</p>
+        <p><b>Avarage vote:</b> {{movie.vote_average}}</p>
+      </div>
+    </div>
+  </div>
+</div>

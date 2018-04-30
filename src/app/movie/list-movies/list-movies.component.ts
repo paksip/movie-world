@@ -41,10 +41,9 @@ export class ListMoviesComponent implements OnInit {
     });
   }
 
-  getMovie(movie: any) {
+  details(movie: any) {
     this.movies = [];
     this.movie.emit(movie);
-    // this.router.navigate([`movie/details/${movie.id}`]);
   }
 
   changeOption(option: SearchOption) {
