@@ -1,5 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PerformerService} from "../performer.service";
+import {SearchOption} from "../../shared/enums/search-option.enum";
+import {Router} from "@angular/router";
+import {MovieService} from "../../movie/movie.service";
 
 @Component({
   selector: 'app-list-performers',
@@ -8,18 +11,25 @@ import {PerformerService} from "../performer.service";
 })
 export class ListPerformersComponent implements OnInit {
 
-  @Output('performer') performer = new EventEmitter<any>();
-  performerId: any;
+  search: string;
+  performers: any[] = [];
 
-  constructor(private performerService: PerformerService) { }
+  @Output('performer') performer= new EventEmitter<any>();
+
+  constructor(private performerService: PerformerService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  getById(){
-    this.performerService.getById(this.performerId).subscribe(result => {
-      this.performer.emit(result);
+  getByText() {
+    this.performerService.getByText(this.search).subscribe((outcome) => {
+      this.router.navigate(['/performer'], { queryParams: {} });
+      this.performers = outcome.results;
     });
   }
 
+  details(performer: any) {
+    this.performers = [];
+    this.router.navigate(['/performer'], { queryParams: { performerId: performer.id} });
+  }
 }

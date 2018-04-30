@@ -1,1 +1,28 @@
-{{ performer | json }}
+<div class="container-fluid py-3" *ngIf="performer">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3>{{performer.name}}</h3>
+      <div class="text-center">
+        <img src="https://image.tmdb.org/t/p/w400/{{performer.profile_path}}">
+      </div>
+      <br>
+      <div>
+        <p><b>Biography:</b> {{performer.biography}}</p>
+        <p><b>Birthday:</b> {{performer.birthday}}</p>
+        <p><b>Place of birth:</b> {{performer.place_of_birth}}</p>
+        <p><b>Popularity:</b> {{performer.popularity}}</p>
+        <p><b>Casts:</b></p>
+        <div class="row card-group">
+          <div class="col-lg-2 col-xl-3 col-md-3 col-sm-6 py-2 px-2" *ngFor="let movie of movieCredits">
+            <div class="card">
+              <h4>{{ movie.title }}</h4>
+              <div class="text-center">
+                <img class="cast-image" src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
