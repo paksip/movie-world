@@ -1,7 +1,7 @@
 <div class="container-fluid py-3" *ngIf="performer">
   <div class="row">
     <div class="col-12 text-center">
-      <h3>{{performer.name}}</h3>
+      <h1>{{performer.name}}</h1>
       <div class="text-center">
         <img src="https://image.tmdb.org/t/p/w400/{{performer.profile_path}}">
       </div>
@@ -13,11 +13,12 @@
         <p><b>Popularity:</b> {{performer.popularity}}</p>
         <p><b>Casts:</b></p>
         <div class="row card-group">
-          <div class="col-lg-2 col-xl-3 col-md-3 col-sm-6 py-2 px-2" *ngFor="let movie of movieCredits">
-            <div class="card">
-              <h4>{{ movie.title }}</h4>
+          <div class="col-lg-2 col-xl-3 col-md-3 col-sm-6 py-2 px-2" *ngFor="let credit of credits">
+            <div class="card clickable-card" [routerLink]="['/movie']" [queryParams]="{movieId: credit.id}">
+              <h4>{{ credit.title }}</h4>
+              <p>Role: {{credit.character}}</p>
               <div class="text-center">
-                <img class="cast-image" src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}">
+                <img class="cast-image" src="https://image.tmdb.org/t/p/w400/{{credit.poster_path}}">
               </div>
             </div>
           </div>

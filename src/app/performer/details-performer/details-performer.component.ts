@@ -11,7 +11,7 @@ export class DetailsPerformerComponent implements OnInit {
 
   @Input('performer') performer: any;
   performerId: number;
-  movieCredits: any[] = [];
+  credits: any[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, private performerService: PerformerService) { }
 
@@ -22,8 +22,8 @@ export class DetailsPerformerComponent implements OnInit {
         this.performerService.getById(this.performerId).subscribe(result => {
           this.performer = result;
         });
-        this.performerService.getMovieCredits(this.performerId).subscribe(movies =>{
-          this.movieCredits = movies.cast;
+        this.performerService.getCombinedCredits(this.performerId).subscribe(credits =>{
+          this.credits = credits.cast;
         });
       }else {
         this.performer = undefined;

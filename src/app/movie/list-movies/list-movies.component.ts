@@ -28,21 +28,21 @@ export class ListMoviesComponent implements OnInit {
   getById(){
     this.movieService.getById(this.movieId).subscribe(result => {
       this.movies = [];
-      this.movie.emit(undefined);
+      this.router.navigate(['/movie'], { queryParams: {} });
       this.movies.push(result);
     });
   }
 
   getByText() {
     this.movieService.getByText(this.search).subscribe((outcome) => {
-      this.movie.emit(undefined);
+      this.router.navigate(['/movie'], { queryParams: {} });
       this.movies = outcome.results;
     });
   }
 
   details(movie: any) {
     this.movies = [];
-    this.movie.emit(movie);
+    this.router.navigate(['/movie'], { queryParams: { movieId: movie.id} });
   }
 
   changeOption(option: SearchOption) {
