@@ -21,7 +21,6 @@ export class DetailsSeriesComponent implements OnInit {
         this.seriesService.getById(this.seriesId).subscribe(result => {
           this.series = result;
         });
-        // TODO: GET SEASON/EPISODES
       }else {
         this.series = undefined;
       }

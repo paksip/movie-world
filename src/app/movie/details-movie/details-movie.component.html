@@ -1,16 +1,29 @@
 <div class="container-fluid py-3" *ngIf="movie">
   <div class="row">
     <div class="col-12 text-center">
-      <h3>{{movie.title}}</h3>
+      <h1>{{movie.title}}</h1>
       <div class="text-center">
         <img src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}">
       </div>
+      <br>
       <div>
         <p><b>Overview:</b> {{movie.overview}}</p>
         <p><b>Release:</b> {{movie.release_date}}</p>
         <p><b>Language:</b> {{movie.original_language}}</p>
         <p><b>Popularity:</b> {{movie.popularity}}</p>
         <p><b>Avarage vote:</b> {{movie.vote_average}}</p>
+        <p><b>Performers:</b></p>
+        <div class="row card-group">
+          <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let credit of credits">
+            <div class="card card-movie mx-4 py-3">
+              <h3>{{ credit.character }}</h3>
+              <p>Original name: {{ credit.name }}</p>
+              <div class="text-center">
+                <img class="movie-img" src="https://image.tmdb.org/t/p/w400/{{credit.profile_path}}">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

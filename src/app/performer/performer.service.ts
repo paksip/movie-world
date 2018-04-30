@@ -18,9 +18,9 @@ export class PerformerService {
     (`${environment.basic_url}/search/person?api_key=${environment.key_API}&query=${search}`);
   }
 
-  getMovieCredits(id: number): Observable<any>{
+  getCombinedCredits(id: number): Observable<any>{
     return this.http.get<any>
-    (`${environment.basic_url}/person/${id}/movie_credits?api_key=${environment.key_API}`);
+    (`${environment.basic_url}/person/${id}/combined_credits?api_key=${environment.key_API}`);
   }
 
 }
