@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 
+// AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -15,7 +16,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     CommonModule,
     HttpClientModule,
-    HttpModule,
     TranslateModule,
     FormsModule
   ],

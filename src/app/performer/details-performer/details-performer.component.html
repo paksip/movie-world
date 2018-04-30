@@ -11,7 +11,7 @@
         <p><b>Birthday:</b> {{performer.birthday}}</p>
         <p><b>Place of birth:</b> {{performer.place_of_birth}}</p>
         <p><b>Popularity:</b> {{performer.popularity}}</p>
-        <p><b>Casts:</b></p>
+        <h4><b>Casts:</b></h4>
         <div class="row card-group">
           <div class="col-lg-2 col-xl-3 col-md-3 col-sm-6 py-2 px-2" *ngFor="let credit of credits">
             <div class="card clickable-card" [routerLink]="['/movie']" [queryParams]="{movieId: credit.id}">

@@ -3,6 +3,7 @@ import {PerformerService} from "../performer.service";
 import {SearchOption} from "../../shared/enums/search-option.enum";
 import {Router} from "@angular/router";
 import {MovieService} from "../../movie/movie.service";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-list-performers',

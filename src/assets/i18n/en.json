@@ -1,3 +1,4 @@
 {
-  "SEARCH" : "Search"
+  "SEARCH_BY_TEXT" : "Search by text",
+  "SEARCH_BY_ID" : "Search by ID"
 }

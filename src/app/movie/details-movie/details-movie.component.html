@@ -12,7 +12,7 @@
         <p><b>Language:</b> {{movie.original_language}}</p>
         <p><b>Popularity:</b> {{movie.popularity}}</p>
         <p><b>Avarage vote:</b> {{movie.vote_average}}</p>
-        <p><b>Performers:</b></p>
+        <h4><b>Performers:</b></h4>
         <div class="row card-group">
           <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let credit of credits">
             <div class="card clickable-card mx-4 py-3" [routerLink]="['/performer']" [queryParams]="{performerId: credit.id}">
@@ -25,7 +25,7 @@
           </div>
         </div>
         <br>
-        <p><b>Recommendations:</b></p>
+        <h4><b>Recommendations:</b></h4>
         <div class="row card-group">
           <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let rec of recommendations">
             <div class="card clickable-card mx-4 py-3" [routerLink]="['/movie']"

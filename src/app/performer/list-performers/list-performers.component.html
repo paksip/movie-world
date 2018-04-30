@@ -3,7 +3,7 @@
   <br>
   <div clas="row">
     <div class="col-12 text-center">
-      <label for="PerformerSearchByText">Search by text</label>
+      <label for="PerformerSearchByText">{{ 'SEARCH_BY_TEXT' | translate }}</label>
       <input type="text" id="PerformerSearchByText" name="PerformerSearchByText"
              [(ngModel)]="search" (click)="getByText()" (change)="getByText()"autofocus/>
       </div>

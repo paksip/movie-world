@@ -3,9 +3,9 @@
   <div class="row">
     <div class="col-12 text-center">
       <input type="radio" name="radio"  (click)="changeOption(SearchOption.Id)">
-        <label>Search by ID</label>
+        <label>{{ 'SEARCH_BY_ID' | translate }}</label>
       <input type="radio" name="radio"  (click)="changeOption(SearchOption.Text)" checked>
-        <label>Search by Text</label>
+        <label>{{ 'SEARCH_BY_TEXT' | translate }}</label>
     </div>
   </div>
   <br>
