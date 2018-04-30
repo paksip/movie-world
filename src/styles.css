@@ -10,3 +10,6 @@ img{
   height: 100%;
 }
 
+.card-movie{
+  cursor: pointer;
+}

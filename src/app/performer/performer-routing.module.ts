@@ -9,16 +9,6 @@ const routes: Routes = [
   {
     path: '',
     component: PerformerComponent,
-    children: [
-      {
-        path: 'list',
-        component: ListPerformersComponent
-      },
-      {
-        path: 'details/:id',
-        component: DetailsPerformerComponent
-      }
-    ]
   }
 ];
 
