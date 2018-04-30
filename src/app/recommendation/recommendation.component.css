@@ -1,0 +1,8 @@
+.clickable-header{
+  cursor: pointer;
+}
+
+.clicked-header{
+  color: darkred;
+  font-weight: bold;
+}

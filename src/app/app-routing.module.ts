@@ -21,6 +21,10 @@ const routes: Routes = [
     path: 'performer',
     loadChildren: 'app/performer/performer.module#PerformerModule'
   },
+  {
+    path: 'recommendation',
+    loadChildren: 'app/recommendation/recommendation.module#RecommendationModule'
+  }
 
 ];
 
