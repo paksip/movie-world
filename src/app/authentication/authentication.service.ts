@@ -11,11 +11,11 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
   authenticateRequest(): Observable<any>{
-    return this.http.get<any>(`${environment.basic_url}/3/authentication/token/new?api_key=${environment.key_API}`);
+    return this.http.get<any>(`${environment.basic_url}/authentication/token/new?api_key=${environment.key_API}`);
   }
 
   authenticateSession(session: string): Observable<any>{
-    return this.http.get<any>(`${environment.basic_url}/3/authentication/session/new?api_key=${environment.key_API}&request_token=${session}`);
+    return this.http.get<any>(`${environment.basic_url}/authentication/session/new?api_key=${environment.key_API}&request_token=${session}`);
   }
 
   authenticate(){

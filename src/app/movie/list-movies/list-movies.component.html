@@ -1,2 +1,39 @@
-<label for="movie">Search by id</label>
-<input type="text" id="movie" name="movie" [(ngModel)]="movieId" (change)="getById()"/>
+<div class="container-fluid py-3">
+  <!--Choose a searching option-->
+  <div class="row">
+    <div class="col-12 text-center">
+      <input type="radio" name="radio"  (click)="changeOption(SearchOption.Id)">
+        <label>Search by ID</label>
+      <input type="radio" name="radio"  (click)="changeOption(SearchOption.Text)" checked>
+        <label>Search by Text</label>
+    </div>
+  </div>
+  <br>
+  <!--Searchbar-->
+   <div clas="row">
+     <div class="col-12 text-center" [ngSwitch]="option">
+       <div *ngSwitchCase="SearchOption.Id">
+         <label for="movieSearchById">Search by id</label>
+         <input type="text" id="movieSearchById" name="movieSearchById"
+                [(ngModel)]="movieId" (click)="getById()" (change)="getById()"/>
+       </div>
+       <div *ngSwitchCase="SearchOption.Text">
+         <label for="movieSearchByText">Search by text</label>
+         <input type="text" id="movieSearchByText" name="movieSearchByText"
+                [(ngModel)]="search" (click)="getByText()" (change)="getByText()"/>
+       </div>
+     </div>
+   </div>
+  <br>
+<!--List of movies-->
+  <div class="row card-group">
+    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let movie of movies">
+      <div class="card card-movie mx-4 py-3" (click)="getMovie(movie)">
+        <h3>{{ movie.title }}</h3>
+        <div class="text-center">
+          <img src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

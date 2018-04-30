@@ -1,0 +1,12 @@
+.card-movie{
+  cursor: pointer;
+}
+
+h3{
+  text-align: center;
+}
+
+img{
+  width : 400px;
+  height: 600px;
+}
