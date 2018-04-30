@@ -10,7 +10,12 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getById(id: number): Observable<Movie>{
-    return this.http.get<Movie>(`${environment.basic_url}/3/movie/${id}?api_key=${environment.key_API}`)
+  getById(id: number): Observable<any>{
+    return this.http.get<any>(`${environment.basic_url}/movie/${id}?api_key=${environment.key_API}`)
+  }
+
+  getByText(search: string): Observable<any>{
+    return this.http.get<any>
+    (`${environment.basic_url}/search/movie?api_key=${environment.key_API}&query=${search}`);
   }
 }

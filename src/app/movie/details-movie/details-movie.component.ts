@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MovieService} from "../movie.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-details-movie',
@@ -9,9 +11,10 @@ export class DetailsMovieComponent implements OnInit {
 
   @Input("movie") movie: any;
 
-  constructor() { }
+  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
   }
 
 }

@@ -10,7 +10,7 @@ export class PerformerService {
   constructor(private http: HttpClient) { }
 
   getById(id: number): Observable<Performer>{
-    return this.http.get<Performer>(`${environment.basic_url}/3/person/${id}?api_key=${environment.key_API}`);
+    return this.http.get<Performer>(`${environment.basic_url}/person/${id}?api_key=${environment.key_API}`);
   }
 
 }
