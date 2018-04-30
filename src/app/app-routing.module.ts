@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: 'app/movie/movie.module#MovieModule'
   },
   {
+    path: 'series',
+    loadChildren: 'app/series/series.module#SeriesModule'
+  },
+  {
     path: 'performer',
     loadChildren: 'app/performer/performer.module#PerformerModule'
   },
