@@ -13,7 +13,6 @@ export class ListSeriesComponent implements OnInit {
 
   search: string;
   seriesArray: any[] = [];
-  option: SearchOption = SearchOption.Text;
 
   @Output('series') series= new EventEmitter<any>();
 
@@ -24,14 +23,13 @@ export class ListSeriesComponent implements OnInit {
 
   getByText() {
     this.seriesService.getByText(this.search).subscribe((outcome) => {
-      this.series.emit(undefined);
+      this.router.navigate(['/series'], { queryParams: {} });
       this.seriesArray = outcome.results;
     });
   }
 
   details(series: any) {
     this.seriesArray = [];
-    this.series.emit(series);
+    this.router.navigate(['/series'], { queryParams: { seriesId: series.id} });
   }
-
 }
