@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MovieService} from "../movie.service";
-import {Movie} from "../movie.model";
 import {Router} from "@angular/router";
 import {SearchOption} from "../../shared/enums/search-option.enum";
 

@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import {AuthenticationModule} from "./authentication/authentication.module";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
+import { SeriesModule } from './series/series.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {HttpClient} from "@angular/common/http";
         deps: [HttpClient]
       }
     }),
-    AuthenticationModule
+    AuthenticationModule,
+    SeriesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+<div class="container-fluid py-3 pt-5">
+  <!--Searchbar-->
+  <br>
+  <div clas="row">
+    <div class="col-12 text-center">
+        <label for="movieSearchByText">Search by text</label>
+        <input type="text" id="movieSearchByText" name="movieSearchByText"
+               [(ngModel)]="search" (click)="getByText()" (change)="getByText()"autofocus/>
+    </div>
+  </div>
+  <br>
+  <!--List of series-->
+  <div class="row card-group">
+    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let series of seriesArray">
+      <div class="card card-movie mx-4 py-3" (click)="details(series)">
+        <h3>{{ series.name }}</h3>
+        <div class="text-center">
+          <img src="https://image.tmdb.org/t/p/w400/{{series.poster_path}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
