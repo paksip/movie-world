@@ -28,7 +28,7 @@
 <!--List of movies-->
   <div class="row card-group">
     <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let movie of movies">
-      <div class="card card-movie mx-4 py-3" (click)="details(movie)">
+      <div class="card clickable-card mx-4 py-3" (click)="details(movie)">
         <h3>{{ movie.title }}</h3>
         <div class="text-center">
           <img src="https://image.tmdb.org/t/p/w400/{{movie.poster_path}}">
