@@ -1,4 +1,28 @@
 {
+  "WELCOME" : "Welcome to my website.",
   "SEARCH_BY_TEXT" : "Search by text",
-  "SEARCH_BY_ID" : "Search by ID"
+  "SEARCH_BY_ID" : "Search by ID",
+  "OVERVIEW": "Overview",
+  "RELEASE": "Release",
+  "LANGUAGE": "Language",
+  "POPULARITY": "Popularity",
+  "AVERAGE_VOTE": "Average vote",
+  "PERFORMERS": "Performers",
+  "ORIGINAL_NAME": "Original name",
+  "RECOMMENDATIONS": "Recommendations",
+  "BIOGRAPHY": "Biography",
+  "BIRTHDAY": "Birthday",
+  "PLACE_OF_BIRTH": "Place of birth",
+  "CASTS": "Casts",
+  "ROLE": "Role",
+  "COUNTRY": "Country",
+  "SEASONS": "Seasons",
+  "NUMBER_OF_EPISODES": "Number of episodes",
+  "NAVIGATION_MOVIES": "Movies",
+  "NAVIGATION_SERIES": "Series",
+  "NAVIGATION_PERFORMERS": "Performers",
+  "NAVIGATION_RECOMMENDATION": "Recommendation",
+  "RECOMMENDATION_GENRE_CHOOSER_HEADER": "Just click on a genre for displaying the most popular movies in that",
+  "RECOMMENDATION_GENERAL_POPULAR_MOVIES_HEADER": "Generally the most popular movies"
+
 }

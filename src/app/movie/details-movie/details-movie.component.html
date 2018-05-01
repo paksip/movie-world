@@ -7,17 +7,17 @@
       </div>
       <br>
       <div>
-        <p><b>Overview:</b> {{movie.overview}}</p>
-        <p><b>Release:</b> {{movie.release_date}}</p>
-        <p><b>Language:</b> {{movie.original_language}}</p>
-        <p><b>Popularity:</b> {{movie.popularity}}</p>
-        <p><b>Avarage vote:</b> {{movie.vote_average}}</p>
-        <h4><b>Performers:</b></h4>
+        <p><b>{{'OVERVIEW' | translate}}:</b> {{movie.overview}}</p>
+        <p><b>{{'RELEASE' | translate}}:</b> {{movie.release_date}}</p>
+        <p><b>{{'LANGUAGE' | translate}}:</b> {{movie.original_language}}</p>
+        <p><b>{{'POPULARITY' | translate}}:</b> {{movie.popularity}}</p>
+        <p><b>{{'AVERAGE_VOTE' | translate}}:</b> {{movie.vote_average}}</p>
+        <h4><b>{{'PERFORMERS' | translate}}:</b></h4>
         <div class="row card-group">
           <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let credit of credits">
             <div class="card clickable-card mx-4 py-3" [routerLink]="['/performer']" [queryParams]="{performerId: credit.id}">
               <h3>{{ credit.character }}</h3>
-              <p>Original name: {{ credit.name }}</p>
+              <p>{{'ORIGINAL_NAME' | translate}}: {{ credit.name }}</p>
               <div class="text-center">
                 <img class="movie-img" src="https://image.tmdb.org/t/p/w400/{{credit.profile_path}}">
               </div>
@@ -25,7 +25,7 @@
           </div>
         </div>
         <br>
-        <h4><b>Recommendations:</b></h4>
+        <h4><b>{{'RECOMMENDATIONS' | translate}}:</b></h4>
         <div class="row card-group">
           <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let rec of recommendations">
             <div class="card clickable-card mx-4 py-3" [routerLink]="['/movie']"

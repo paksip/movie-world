@@ -5,7 +5,8 @@ import {CoreModule} from "../core/core.module";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CoreModule
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent]

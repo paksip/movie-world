@@ -13,12 +13,12 @@
    <div clas="row">
      <div class="col-12 text-center" [ngSwitch]="option">
        <div *ngSwitchCase="SearchOption.Id">
-         <label for="movieSearchById">Search by id</label>
+         <label for="movieSearchById">{{ 'SEARCH_BY_ID' | translate }}</label>
          <input type="text" id="movieSearchById" name="movieSearchById"
                 [(ngModel)]="movieId" (click)="getById()" (change)="getById()" autofocus/>
        </div>
        <div *ngSwitchCase="SearchOption.Text">
-         <label for="movieSearchByText">Search by text</label>
+         <label for="movieSearchByText">{{ 'SEARCH_BY_ID' | translate }}</label>
          <input type="text" id="movieSearchByText" name="movieSearchByText"
                 [(ngModel)]="search" (click)="getByText()" (change)="getByText()"autofocus/>
        </div>
