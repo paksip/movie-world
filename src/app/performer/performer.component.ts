@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-performer',
@@ -8,17 +7,9 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class PerformerComponent implements OnInit {
 
-  performer: any;
-
   constructor() {
-
   }
 
   ngOnInit() {
   }
-
-  performerChanged(performer: any){
-    this.performer = performer;
-  }
-
 }

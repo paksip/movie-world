@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../movie.service";
 import {ActivatedRoute} from "@angular/router";
 import {RecommendationService} from "../../recommendation/recommendation.service";
@@ -10,7 +10,7 @@ import {RecommendationService} from "../../recommendation/recommendation.service
 })
 export class DetailsMovieComponent implements OnInit {
 
-  @Input("movie") movie: any;
+  movie: any;
   movieId: number;
   credits: any[] = [];
   recommendations: any[] = [];
@@ -19,6 +19,7 @@ export class DetailsMovieComponent implements OnInit {
               private recommendationService: RecommendationService) { }
 
   ngOnInit() {
+    // Subscribing on the URL
     this.activatedRoute.queryParams.subscribe(queryParams => {
       // Movie
       if(queryParams.movieId){
@@ -37,9 +38,6 @@ export class DetailsMovieComponent implements OnInit {
       }else {
         this.movie = undefined;
       }
-
     });
-
   }
-
 }

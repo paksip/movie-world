@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
 import {LanguageService} from "./core/language.service";
 
 @Component({
@@ -8,7 +7,6 @@ import {LanguageService} from "./core/language.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
 
   constructor( languageService: LanguageService){
 

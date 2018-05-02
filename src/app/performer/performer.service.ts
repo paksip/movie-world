@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment'
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
-import {Performer} from "./performer.model";
 
 @Injectable()
 export class PerformerService {

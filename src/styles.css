@@ -3,6 +3,7 @@
 
 h1, h3, h4{
   text-align: center;
+  color: darkred;
 }
 
 img{
@@ -13,4 +14,3 @@ img{
 .clickable-card{
   cursor: pointer;
 }
-

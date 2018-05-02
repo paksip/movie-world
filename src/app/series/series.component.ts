@@ -1,6 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {ListMoviesComponent} from "../movie/list-movies/list-movies.component";
-import {ListSeriesComponent} from "./list-series/list-series.component";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-series',
@@ -9,16 +7,8 @@ import {ListSeriesComponent} from "./list-series/list-series.component";
 })
 export class SeriesComponent implements OnInit {
 
-  @ViewChild(ListSeriesComponent) listSeriesComponent: ListSeriesComponent;
-  series: any;
-
   constructor() { }
 
   ngOnInit() {
   }
-
-  seriesChanged(series: any){
-    this.series = series;
-  }
-
 }

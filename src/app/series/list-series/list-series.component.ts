@@ -1,7 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {SearchOption} from "../../shared/enums/search-option.enum";
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {MovieService} from "../../movie/movie.service";
 import {SeriesService} from "../series.service";
 
 @Component({
@@ -14,13 +12,12 @@ export class ListSeriesComponent implements OnInit {
   search: string;
   seriesArray: any[] = [];
 
-  @Output('series') series= new EventEmitter<any>();
-
   constructor(private seriesService: SeriesService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  // Get series by text
   getByText() {
     this.seriesService.getByText(this.search).subscribe((outcome) => {
       this.router.navigate(['/series'], { queryParams: {} });
@@ -28,6 +25,7 @@ export class ListSeriesComponent implements OnInit {
     });
   }
 
+  // Click on a series
   details(series: any) {
     this.seriesArray = [];
     this.router.navigate(['/series'], { queryParams: { seriesId: series.id} });

@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ListMoviesComponent} from "./list-movies/list-movies.component";
 
 @Component({
   selector: 'app-movie',
@@ -8,16 +7,8 @@ import {ListMoviesComponent} from "./list-movies/list-movies.component";
 })
 export class MovieComponent implements OnInit {
 
-  @ViewChild(ListMoviesComponent) listMovieComponent: ListMoviesComponent;
-  movie: any;
-
   constructor() { }
 
   ngOnInit() {
   }
-
-  movieChanged(movie: any){
-    this.movie = movie;
-  }
-
 }

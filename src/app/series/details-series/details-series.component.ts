@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {SeriesService} from "../series.service";
 
@@ -9,14 +9,16 @@ import {SeriesService} from "../series.service";
 })
 export class DetailsSeriesComponent implements OnInit {
 
-  @Input("series") series: any;
+  series: any;
   seriesId: number;
 
   constructor(private activatedRoute: ActivatedRoute, private seriesService: SeriesService) { }
 
   ngOnInit() {
+    // Subscribing on the URL
     this.activatedRoute.queryParams.subscribe(queryParams => {
       if(queryParams.seriesId){
+        // Getting the selected series
         this.seriesId = queryParams.seriesId;
         this.seriesService.getById(this.seriesId).subscribe(result => {
           this.series = result;
@@ -24,8 +26,6 @@ export class DetailsSeriesComponent implements OnInit {
       }else {
         this.series = undefined;
       }
-
     });
   }
-
 }

@@ -19,14 +19,17 @@ export class RecommendationComponent implements OnInit {
               private movieService: MovieService) { }
 
   ngOnInit() {
+    // Getting general popular movies
     this.recommendationService.getMostPopularMovies().subscribe(movies => {
       this.movies = movies.results;
     });
+    // Getting genres
     this.movieService.getGenres().subscribe(genresArray => {
       this.genres = genresArray.genres;
     });
   }
 
+  // Get popular movies by a selected genre
   getMostPopularMoviesByGenre(genreId: number){
     this.genreId = genreId;
     this.recommendationService.getMostPopularMoviesByGenre(genreId).subscribe(movies => {
