@@ -12,6 +12,10 @@
     </div>
   </div>
   <br>
+  <!--Movies by genre-->
+  <div class="position-relative" *ngIf="isLoading">
+    <app-loading></app-loading>
+  </div>
   <div class="row card-group">
     <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let movie of moviesByGenre">
       <div class="card clickable-card mx-4 py-3" [routerLink]="['/movie']"

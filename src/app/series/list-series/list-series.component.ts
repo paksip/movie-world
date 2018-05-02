@@ -11,6 +11,7 @@ export class ListSeriesComponent implements OnInit {
 
   search: string;
   seriesArray: any[] = [];
+  isLoading = false;
 
   constructor(private seriesService: SeriesService, private router: Router) { }
 
@@ -19,7 +20,9 @@ export class ListSeriesComponent implements OnInit {
 
   // Get series by text
   getByText() {
+    this.isLoading = true;
     this.seriesService.getByText(this.search).subscribe((outcome) => {
+      this.isLoading = false;
       this.router.navigate(['/series'], { queryParams: {} });
       this.seriesArray = outcome.results;
     });

@@ -15,6 +15,7 @@ export class ListMoviesComponent implements OnInit {
   search: string;
   movies: any[] = [];
   option: SearchOption = SearchOption.Text;
+  isLoading = false;
 
   constructor(private movieService: MovieService, private router: Router) { }
 
@@ -23,7 +24,9 @@ export class ListMoviesComponent implements OnInit {
 
   // Get a movie by the written ID
   getById(){
+    this.isLoading = true;
     this.movieService.getById(this.movieId).subscribe(result => {
+      this.isLoading = false;
       this.movies = [];
       this.router.navigate(['/movie'], { queryParams: {} }); // Clear URL
       this.movies.push(result);
@@ -32,7 +35,9 @@ export class ListMoviesComponent implements OnInit {
 
   // Get a movie by the written text
   getByText() {
+    this.isLoading = true;
     this.movieService.getByText(this.search).subscribe((outcome) => {
+      this.isLoading = false;
       this.router.navigate(['/movie'], { queryParams: {} }); // Clear URL
       this.movies = outcome.results;
     });

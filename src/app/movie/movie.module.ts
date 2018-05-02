@@ -6,11 +6,13 @@ import { DetailsMovieComponent } from './details-movie/details-movie.component';
 import { MovieRoutingModule } from './movie-routing.module';
 import { MovieService } from './movie.service';
 import {CoreModule} from "../core/core.module";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    SharedModule,
     MovieRoutingModule
   ],
   declarations: [MovieComponent, ListMoviesComponent, DetailsMovieComponent],

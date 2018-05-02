@@ -6,11 +6,13 @@ import { PerformerComponent } from './performer.component';
 import { PerformerRoutingModule } from './performer-routing.module';
 import { PerformerService } from './performer.service';
 import {CoreModule} from "../core/core.module";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    SharedModule,
     PerformerRoutingModule
   ],
   declarations: [ListPerformersComponent, DetailsPerformerComponent, PerformerComponent],

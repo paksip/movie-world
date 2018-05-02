@@ -11,6 +11,7 @@ export class ListPerformersComponent implements OnInit {
 
   search: string;
   performers: any[] = [];
+  isLoading = false;
 
   constructor(private performerService: PerformerService, private router: Router) { }
 
@@ -19,7 +20,9 @@ export class ListPerformersComponent implements OnInit {
 
   // Get a person by text
   getByText() {
+    this.isLoading = true;
     this.performerService.getByText(this.search).subscribe((outcome) => {
+      this.isLoading = false;
       this.router.navigate(['/performer'], { queryParams: {} }); // Clear URL
       this.performers = outcome.results;
     });

@@ -1,15 +1,18 @@
 <div class="container-fluid py-3 pt-5">
   <!--Searchbar-->
   <br>
-  <div clas="row">
+  <div class="row">
     <div class="col-12 text-center">
       <label for="PerformerSearchByText">{{ 'SEARCH_BY_TEXT' | translate }}</label>
       <input type="text" id="PerformerSearchByText" name="PerformerSearchByText"
-             [(ngModel)]="search" (click)="getByText()" (change)="getByText()"autofocus/>
+             [(ngModel)]="search" (click)="getByText()" (change)="getByText()" autofocus/>
       </div>
     </div>
   <br>
   <!--List of performers-->
+  <div class="position-relative" *ngIf="isLoading">
+    <app-loading></app-loading>
+  </div>
   <div class="row card-group">
     <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let performer of performers">
       <div class="card clickable-card mx-4 py-3" (click)="details(performer)">

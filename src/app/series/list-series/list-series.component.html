@@ -5,11 +5,14 @@
     <div class="col-12 text-center">
         <label for="movieSearchByText">{{ 'SEARCH_BY_TEXT' | translate }}</label>
         <input type="text" id="movieSearchByText" name="movieSearchByText"
-               [(ngModel)]="search" (click)="getByText()" (change)="getByText()"autofocus/>
+               [(ngModel)]="search" (click)="getByText()" (change)="getByText()" autofocus/>
     </div>
   </div>
   <br>
   <!--List of series-->
+  <div class="position-relative" *ngIf="isLoading">
+    <app-loading></app-loading>
+  </div>
   <div class="row card-group">
     <div class="col-lg-4 col-xl-3 col-md-6 col-sm-12" *ngFor="let series of seriesArray">
       <div class="card clickable-card mx-4 py-3" (click)="details(series)">

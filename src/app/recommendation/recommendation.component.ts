@@ -14,6 +14,7 @@ export class RecommendationComponent implements OnInit {
   moviesByGenre: any[] = [];
   genres: any[] = [];
   genreId : number;
+  isLoading = false;
 
   constructor(private router: Router, private recommendationService: RecommendationService,
               private movieService: MovieService) { }
@@ -31,8 +32,10 @@ export class RecommendationComponent implements OnInit {
 
   // Get popular movies by a selected genre
   getMostPopularMoviesByGenre(genreId: number){
+    this.isLoading = true;
     this.genreId = genreId;
     this.recommendationService.getMostPopularMoviesByGenre(genreId).subscribe(movies => {
+      this.isLoading = false;
       this.moviesByGenre = movies.results;
     });
   }
