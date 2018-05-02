@@ -30,6 +30,8 @@ export class ListMoviesComponent implements OnInit {
       this.movies = [];
       this.router.navigate(['/movie'], { queryParams: {} }); // Clear URL
       this.movies.push(result);
+    }, error => {
+      confirm('Wrong input -> no results.');
     });
   }
 
@@ -40,6 +42,8 @@ export class ListMoviesComponent implements OnInit {
       this.isLoading = false;
       this.router.navigate(['/movie'], { queryParams: {} }); // Clear URL
       this.movies = outcome.results;
+    }, error => {
+      confirm('Wrong input -> no results.');
     });
   }
 

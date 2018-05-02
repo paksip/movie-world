@@ -25,6 +25,8 @@ export class ListSeriesComponent implements OnInit {
       this.isLoading = false;
       this.router.navigate(['/series'], { queryParams: {} });
       this.seriesArray = outcome.results;
+    }, error => {
+      confirm('Wrong input -> no results.');
     });
   }
 

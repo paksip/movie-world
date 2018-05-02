@@ -25,6 +25,8 @@ export class ListPerformersComponent implements OnInit {
       this.isLoading = false;
       this.router.navigate(['/performer'], { queryParams: {} }); // Clear URL
       this.performers = outcome.results;
+    }, error => {
+      confirm('Wrong input -> no results.');
     });
   }
 
